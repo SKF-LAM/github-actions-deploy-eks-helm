@@ -57,6 +57,9 @@ inputs:
     atomic:
         description: 'Add the --atomic flag to rollback on failure'
         required: false
+    debug:
+        description: 'Add the --debug flag to helm'
+        required: false
 runs:
     using: 'docker'
     image: 'docker://bitovi/deploy-eks-helm:v1.0.3'
@@ -77,3 +80,4 @@ runs:
         HELM_WAIT: ${{ inputs.helm-wait }}
         PLUGINS_LIST: ${{ inputs.plugins }}
         HELM_ATOMIC: ${{ inputs.atomic }}
+        HELM_DEBUG: ${{ inputs.debug }}

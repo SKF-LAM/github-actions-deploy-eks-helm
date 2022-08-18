@@ -66,6 +66,11 @@ if [ -n "${HELM_ATOMIC}" ]; then
     HELM_COMMAND="${HELM_COMMAND} --atomic"
 fi
 
+# Add debug flag
+if [ -n "${HELM_DEBUG}" ]; then
+    HELM_COMMAND="${HELM_COMMAND} --debug"
+fi
+
 # Set paramaters
 for config_file in ${DEPLOY_CONFIG_FILES//,/ }
 do
